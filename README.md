@@ -88,7 +88,11 @@ To run the `example/app.js`, you will need to create an iOS app with the followi
 
 
 
+------
 
+
+
+Further discussion can be had in the `#module-development` channel on Ti-Slack [https://ti-slack.slack.com](https://ti-slack.slack.com/)
 
 
 
