@@ -1,7 +1,7 @@
 # SwifTi
 
 
-A test Titanium iOS module built with Swift. Just for learning how to build them and use UIViews and custom stuff.. etc.
+A test Titanium **iOS** module built with **Swift**. Just for learning how to build them and use UIViews and custom stuff.. etc.
 
 
 
@@ -11,7 +11,9 @@ This is just a test/example module I'm build as I learn to build Titanium iOS ap
 
 It demonstrates how to communicate with the module (and its view) from within the app. 
 
-Included for demonstration is a third-party view animation of the old Siri 'waves'. Also, a microphone level monitor has been created in the module and added to attempt to learn how to draw the values provided by the audio level meters. 
+Included for demonstration is a third-party view animation of the old Siri 'waves', using a Swift adaptation of [SCSiriWaveformView](https://github.com/stefanceriu/SCSiriWaveformView). Also, a microphone level monitor has been created in the module using `AVAudioRecorder`  and added to attempt to learn how to draw the values provided by the audio level metering. 
+
+
 
 And other stuff I haven't thought of yet… ;) 
 
@@ -23,9 +25,11 @@ Feel free to fork, comment and improve the mess I'm no doubt making here!!
 
 And obviously, CODE STRONG!!  
 
+------
 
 
-Here's a screenshot of the emample app: 
+
+Here's a screenshot of the example app: 
 
 ![](screenshot.jpg)
 
