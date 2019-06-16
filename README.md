@@ -1,107 +1,95 @@
-# Appcelerator Titanium Mobile Module Project
+# SwifTi
 
-This is a skeleton Titanium Mobile Mobile module project.
 
-## Module Naming
+A test Titanium iOS module built with Swift. Just for learning how to build them and use UIViews and custom stuff.. etc.
 
-Choose a unique module id for your module.  This ID usually follows a namespace
-convention using DNS notation.  For example, com.appcelerator.module.test.  This
-ID can only be used once by all public modules in Titanium.
 
-## Getting Started
 
-1. Edit the `manifest` with the appropriate details about your module.
-2. Edit the `LICENSE` to add your license details.
-3. Place any assets (such as PNG files) that are required anywhere in the module folder.
-4. Edit the `timodule.xml` and configure desired settings.
-5. Code and build.
+This is just a test/example module I'm build as I learn to build Titanium iOS app modules using Swift instead  of Objective-C. 
 
-## Documentation
------------------------------
 
-You should provide at least minimal documentation for your module in `documentation` folder using the Markdown syntax.
 
-For more information on the Markdown syntax, refer to this documentation at:
+It demonstrates how to communicate with the module (and its view) from within the app. 
 
-<http://daringfireball.net/projects/markdown/>
+Included for demonstration is a third-party view animation of the old Siri 'waves'. Also, a microphone level monitor has been created in the module and added to attempt to learn how to draw the values provided by the audio level meters. 
 
-## Example
+And other stuff I haven't thought of yet… ;) 
 
-The `example` directory contains a skeleton application test harness that can be
-used for testing and providing an example of usage to the users of your module.
 
-## Building
 
-Simply run `appc run -p [ios|android] --build-only` which will compile and package your module.
+Feel free to fork, comment and improve the mess I'm no doubt making here!! 
 
-## Linting
 
-You can use `clang` to lint your code. A default Axway linting style is included inside the module main folder.
-Run `clang-format -style=file -i SRC_FILE` in the module root to lint the `SRC_FILE`. You can also patterns,
-like `clang-format -style=file -i Classes/*` 
 
-## Install
+And obviously, CODE STRONG!!  
 
-To use your module locally inside an app you can copy the zip file into the app root folder and compile your app.
-The file will automatically be extracted and copied into the correct `modules/` folder.
 
-If you want to use your module globally in all your apps you have to do the following:
 
-### macOS
+Here's a screenshot of the emample app: 
 
-Copy the distribution zip file into the `~/Library/Application Support/Titanium` folder
+![](screenshot.jpg)
 
-### Linux
 
-Copy the distribution zip file into the `~/.titanium` folder
 
-### Windows
-Copy the distribution zip file into the `C:\ProgramData\Titanium` folder
+------
 
-## Project Usage
 
-Register your module with your application by editing `tiapp.xml` and adding your module.
-Example:
 
-<modules>
-  <module version="1.0.0">com.kosso.swifti</module>
-</modules>
+To run the `example/app.js`, you will need to create an iOS app with the following added to the `tiapp.xml` file in the `ios` section : 
 
-When you run your project, the compiler will combine your module along with its dependencies
-and assets into the application.
-
-## Example Usage
-
-To use your module in code, you will need to require it.
-
-### ES6+ (recommended)
-
-```js
-import MyModule from 'com.kosso.swifti';
-MyModule.foo();
+```
+<ios>
+    <enable-launch-screen-storyboard>true</enable-launch-screen-storyboard>
+    <use-app-thinning>true</use-app-thinning>
+    <default-background-color>#333333</default-background-color>
+    <plist>
+      <dict>
+        <key>UISupportedInterfaceOrientations~iphone</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+        </array>
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+          <string>UIInterfaceOrientationPortrait</string>
+          <string>UIInterfaceOrientationPortraitUpsideDown</string>
+          <string>UIInterfaceOrientationLandscapeLeft</string>
+          <string>UIInterfaceOrientationLandscapeRight</string>
+        </array>
+        <key>UIRequiresPersistentWiFi</key>
+        <false/>
+        <key>UIPrerenderedIcon</key>
+        <false/>
+        <key>UIStatusBarHidden</key>
+        <false/>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleLightContent</string>
+        <key>UIBackgroundModes</key>
+        <array>
+          <string>audio</string>
+        </array>
+        <key>NSMicrophoneUsageDescription</key>
+        <string>For monitoring audio levels and recording</string>
+      </dict>
+    </plist>
+  </ios>
 ```
 
-### ES5
 
-```js
-var MyModule = require('com.kosso.swifti');
-MyModule.foo();
+
+.. and obviously (?) you'll need to include the module itself in the `<modules>` section too: 
+
+```
+<module platform="iphone">com.kosso.swifti</module>
 ```
 
-## Testing
 
-To test your module with the example, use:
 
-```js
-appc run -p [ios|android]
-```
 
-This will execute the app.js in the example/ folder as a Titanium application.
 
-## Distribution
 
-You have a variety of choises for distributing your module
-- [Gitt.io](http://gitt.io/)
-- [Axway Marketplace](https://marketplace.axway.com/home)
 
-Code strong!
+
+
+-----
+
+@Kosso 2019

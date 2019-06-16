@@ -13,7 +13,7 @@ open class SwiftSiriWaveformView : UIView {
     * The frequency of the sinus wave. The higher the value, the more sinus wave peaks you will have.
     * Default: 1.5
     */
-    @IBInspectable open var frequency:CGFloat = 1.5
+    @IBInspectable open var frequency:CGFloat = 2.5
     
     /*
     * The amplitude that is used when the incoming amplitude is near zero.
@@ -33,19 +33,31 @@ open class SwiftSiriWaveformView : UIView {
     * The lines are joined stepwise, the more dense you draw, the more CPU power is used.
     * Default: 1
     */
-    @IBInspectable open var density:CGFloat = 1.0
+    @IBInspectable open var density:CGFloat = 1.0 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     
     /*
     * Line width used for the prominent wave
     * Default: 1.5
     */
-    @IBInspectable open var primaryLineWidth:CGFloat = 1.5
+    @IBInspectable open var primaryLineWidth:CGFloat = 1.5 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     
     /*
     * Line width used for all secondary waves
     * Default: 0.5
     */
-    @IBInspectable open var secondaryLineWidth:CGFloat = 0.5
+    @IBInspectable open var secondaryLineWidth:CGFloat = 0.5 {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     
     
     /*
@@ -58,7 +70,11 @@ open class SwiftSiriWaveformView : UIView {
     * Color to use when drawing the waves
     * Default: white
     */
-    @IBInspectable open var waveColor:UIColor = UIColor.white
+    @IBInspectable open var waveColor:UIColor = UIColor.white {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
     
     
     /*

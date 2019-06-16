@@ -3,11 +3,23 @@
 //  swifti
 //
 //  Created by Kosso
-//  Copyright (c) 2019 . All rights reserved.
+//  Copyright (c) 2019
 //
 
+// THIS MODULE SERVES LITTLE OTHER PURPOSE THAN TO LEARN HOW TO DO THINGS (or not!)
 
-// learn more here : https://github.com/appcelerator-modules/titanium-onboarding/blob/master/ios/Classes/TiOnboardingViewProxy.swift
+
+// It will create a View and place an old Siri-like wave animtation inside it.
+// It also shows how to create more view classes and add them.
+// Some basic microphone monitoring has also been added to attempt to use the audio power levels to adjust the wave amplitudes.
+// To do... learn how to use the array of amplitude values to draw and update a 'graph'...
+
+
+// learn more from this : https://github.com/appcelerator-modules/titanium-onboarding/blob/master/ios/Classes/TiOnboardingView.swift
+
+// https://github.com/stefanceriu/SCSiriWaveformView
+// https://timrichardson.co/2015/02/calling-objective-c-from-swift/
+// https://timrichardson.co/2015/02/microphone-input-wave-like-siri-using-swift/
 
 
 import UIKit
@@ -17,22 +29,28 @@ import AVFoundation
 
 @objc(ComKossoSwiftiViewProxy)
 public class ComKossoSwiftiViewProxy : TiViewProxy {
-
+    
+    // in progress..
     var amplitudeGraphView:AmplitudeGraphView!
     
+    // Testing some coloured bars...
     var kossoDrawingTestView:KossoDrawingTestView!
     
+    // The (old) Siri-Wave...
     var waveformView:SwiftSiriWaveformView!
+
     var timer:Timer?
     var change:CGFloat = 0.01
     var running:Bool = false
-    
+
+    // Used for updating the waves
     var displayLink:CADisplayLink!
     
-    
+    // For microphone monitoring. (Doesn't actually record anything)
     var recorder:AVAudioRecorder!
     var recordingSession: AVAudioSession!
     
+    // Test storage of values for drawing later..
     var amplitudeBuffer: Array<Float> = Array()
     var bufferLength:Int = 256
     //var amplitudeBuffer: Array<Float> = Array(repeating: 0.0, count: 256)
@@ -48,6 +66,7 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         let props = properties;
         super._init(withProperties: props)
         
+        // Clear the background view colour..
         self.view.backgroundColor = .clear
     }
     
@@ -163,8 +182,9 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         
         
         // TESTING! (and learning!)...
-
-        kossoDrawingTestView = KossoDrawingTestView(frame: CGRect(x:0, y:0, width:self.view.bounds.width, height:self.view.bounds.height))
+        // Adds another view contanining some horizontal coloured bars..
+        // only covers half the parent view width...
+        kossoDrawingTestView = KossoDrawingTestView(frame: CGRect(x:0, y:0, width:self.view.bounds.width / 2, height:self.view.bounds.height))
         kossoDrawingTestView.colors = [
             UIColor(red: 1.0, green: 31.0/255.0, blue: 73.0/255.0, alpha: 0.6), // red
             UIColor(red:1.0, green: 138.0/255.0, blue: 0.0, alpha:0.6), // orange
@@ -178,6 +198,8 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         self.view.addSubview(kossoDrawingTestView)
         
         
+        // To do
+        // Try and draw a grapth from the array of amplitude values...
         
     }
 
@@ -264,11 +286,9 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
     public func helloproxy(args: Array<Any>?) {
         NSLog("[INFO] ComKossoSwiftiViewProxy.swift helloproxy ...")
     }
-    
-    
-    
-    
 }
+
+
 
 // map value utility
 // https://gist.github.com/ZevEisenberg/7ababb61eeab2e93a6d9
