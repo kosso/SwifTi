@@ -51,8 +51,8 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
     var recordingSession: AVAudioSession!
     
     // Test storage of values for drawing later..
-    var amplitudeBuffer: Array<Float> = Array()
-    var bufferLength:Int = 256
+    var amplitudeBuffer: Array<CGFloat> = Array()
+    var bufferLength:Int = 32
     //var amplitudeBuffer: Array<Float> = Array(repeating: 0.0, count: 256)
 
     
@@ -142,16 +142,21 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         //let normalizedValue:CGFloat = pow(10, CGFloat(recorder.peakPower(forChannel: 0))/20)
         waveformView.amplitude = normalizedValue
         
+        
+        
         //NSLog("[INFO] updateMeters.... %@", normalizedValue)
         
         // add value to buffer
-        amplitudeBuffer.append( Float(normalizedValue) )
+        amplitudeBuffer.append( normalizedValue )
         
        // amplitudeBuffer.append( Float(CGFloat(recorder.averagePower(forChannel: 0))).map(from: -160.0...0.0, to: 0.0...100.0) )
         // circular buffer?
         if(amplitudeBuffer.count > bufferLength){
             amplitudeBuffer.remove(at: 0)
         }
+        
+        amplitudeGraphView.values = amplitudeBuffer;
+        
         
     }
     
@@ -180,7 +185,7 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         waveformView.draw(CGRect(x:0, y:0, width:self.view.bounds.width, height:self.view.bounds.height))
         
         
-        
+        /*
         // TESTING! (and learning!)...
         // Adds another view contanining some horizontal coloured bars..
         // only covers half the parent view width...
@@ -196,16 +201,22 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
         kossoDrawingTestView.values = [0.15, 0.1, 0.35, 0.15, 0.1, 0.15]
         kossoDrawingTestView.isUserInteractionEnabled = false
         self.view.addSubview(kossoDrawingTestView)
+        */
         
         
         // To do
         // Try and draw a grapth from the array of amplitude values...
+        amplitudeGraphView = AmplitudeGraphView(frame: CGRect(x:0, y:0, width:self.view.bounds.width, height:self.view.bounds.height))
+        
+        //amplitudeGraphView.values = [0.25, 0.21, 0.15, 0.15, 0.1, 0.15]
+        amplitudeGraphView.isUserInteractionEnabled = false
+        self.view.addSubview(amplitudeGraphView)
         
     }
 
     // Get current array of amplitude values to try and draw a graph or something...
     @objc(_getBuffer:)
-    public func _getBuffer(args: Array<Any>?) -> Array<Float>{
+    public func _getBuffer(args: Array<Any>?) -> Array<CGFloat>{
         return amplitudeBuffer
     }
     
@@ -244,6 +255,13 @@ public class ComKossoSwiftiViewProxy : TiViewProxy {
     //        }
     //        waveformView.amplitude += self.change
     //    }
+    
+    // Set the colour of the wave lines
+    @objc(_setBarsColor:)
+    public func _setBarsColor(args: Array<Any>?) {
+        NSLog("[INFO] ComKossoSwiftiViewProxy.swift _setWaveformColor \(String(describing: args?[0])) ")
+        amplitudeGraphView.barColor = TiUtils.colorValue(args?[0])!.color
+    }
     
     // Set the colour of the wave lines
     @objc(_setWaveformColor:)

@@ -11,6 +11,18 @@ import UIKit
 
 open class AmplitudeGraphView : UIView {
     
+    // Properties of this UIView
+    
+    
+    var barColor:UIColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0) {
+        // This means that when this property changes, the enclosed will be called.
+        didSet {
+            // A builtin iOS UIView method which triggers a redraw by calling the overridden 'draw' function below (used to be 'drawRect')
+            self.setNeedsDisplay()
+        }
+    }
+    
+    
     var colors : [UIColor?] = [UIColor?]() {
         didSet {
             self.setNeedsDisplay()
@@ -41,13 +53,22 @@ open class AmplitudeGraphView : UIView {
         
         let ctx = UIGraphicsGetCurrentContext() // get the current context
         
-        var cumulativeValue:CGFloat = 0 // store a cumulative value in order to start each line after the last one
+        let segWidth:CGFloat = (r.width / CGFloat(numberOfSegments)).rounded()
+        
+        
+        //var cumulativeValue:CGFloat = 0 // store a cumulative value in order to start each line after the last one
         for i in 0..<numberOfSegments {
             
-            ctx!.setFillColor(colors[i]?.cgColor ?? UIColor.clear.cgColor) // set fill color to the given color if it's provided, else use clearColor
-            ctx!.fill(CGRect(x:0, y:cumulativeValue*r.size.height, width:r.size.width, height:values[i]*r.size.height)) // fill that given segment
+            //ctx!.setFillColor(colors[i]?.cgColor ?? UIColor.clear.cgColor)
+            ctx!.setFillColor(barColor.cgColor)
             
-            cumulativeValue += values[i] // increment cumulative value
+            //ctx!.fill(CGRect(x:0, y:cumulativeValue*r.size.height, width:r.size.width, height:values[i]*r.size.height)) // fill that given segment
+            
+            
+            ctx!.fill(CGRect(x: CGFloat(i) * segWidth, y:0, width:segWidth, height:values[i] * r.size.height))
+            
+            
+            //cumulativeValue += values[i] // increment cumulative value
         }
     }
 }
