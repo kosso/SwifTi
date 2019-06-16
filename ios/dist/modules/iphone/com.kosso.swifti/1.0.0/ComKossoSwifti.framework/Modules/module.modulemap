@@ -1,0 +1,11 @@
+framework module ComKossoSwifti {
+  umbrella header "ComKossoSwifti.h"
+
+  export *
+  module * { export * }
+}
+
+module ComKossoSwifti.Swift {
+    header "ComKossoSwifti-Swift.h"
+    requires objc
+}
