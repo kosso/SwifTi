@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6A351A3A22B5E3AE00034ACC /* KossoDrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A3922B5E3AE00034ACC /* KossoDrawingTestView.swift */; };
-		6A351A3C22B67F4600034ACC /* AmplitudeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A3B22B67F4600034ACC /* AmplitudeGraphView.swift */; };
-		6A816ABB22AD503E0091C93C /* ComKossoSwiftiViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A816AB922AD503D0091C93C /* ComKossoSwiftiViewProxy.swift */; };
-		6A816ABC22AD503E0091C93C /* ComKossoSwiftiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A816ABA22AD503E0091C93C /* ComKossoSwiftiView.swift */; };
+		6A351A4222B6A34800034ACC /* SwiftSiriWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A3D22B6A34800034ACC /* SwiftSiriWaveformView.swift */; };
+		6A351A4322B6A34800034ACC /* ComKossoSwiftiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A3E22B6A34800034ACC /* ComKossoSwiftiView.swift */; };
+		6A351A4422B6A34800034ACC /* KossoDrawingTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A3F22B6A34800034ACC /* KossoDrawingTestView.swift */; };
+		6A351A4522B6A34800034ACC /* AmplitudeGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A4022B6A34800034ACC /* AmplitudeGraphView.swift */; };
+		6A351A4622B6A34800034ACC /* ComKossoSwiftiViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A351A4122B6A34800034ACC /* ComKossoSwiftiViewProxy.swift */; };
 		6AB708B522B530290093E218 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AB708B422B530290093E218 /* AVFoundation.framework */; };
-		6AB708CB22B53A930093E218 /* SwiftSiriWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB708CA22B53A930093E218 /* SwiftSiriWaveformView.swift */; };
 		DB34CDE0207B998A005F8E8C /* ComKossoSwiftiModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* ComKossoSwiftiModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* ComKossoSwiftiModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* ComKossoSwiftiModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB34CDE5207B9EBD005F8E8C /* Foundation.framework */; };
@@ -23,12 +23,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		6A351A3922B5E3AE00034ACC /* KossoDrawingTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KossoDrawingTestView.swift; sourceTree = "<group>"; };
-		6A351A3B22B67F4600034ACC /* AmplitudeGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmplitudeGraphView.swift; sourceTree = "<group>"; };
-		6A816AB922AD503D0091C93C /* ComKossoSwiftiViewProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComKossoSwiftiViewProxy.swift; sourceTree = "<group>"; };
-		6A816ABA22AD503E0091C93C /* ComKossoSwiftiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComKossoSwiftiView.swift; sourceTree = "<group>"; };
+		6A351A3D22B6A34800034ACC /* SwiftSiriWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftSiriWaveformView.swift; path = Classes/SwiftSiriWaveformView.swift; sourceTree = "<group>"; };
+		6A351A3E22B6A34800034ACC /* ComKossoSwiftiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComKossoSwiftiView.swift; path = Classes/ComKossoSwiftiView.swift; sourceTree = "<group>"; };
+		6A351A3F22B6A34800034ACC /* KossoDrawingTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KossoDrawingTestView.swift; path = Classes/KossoDrawingTestView.swift; sourceTree = "<group>"; };
+		6A351A4022B6A34800034ACC /* AmplitudeGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AmplitudeGraphView.swift; path = Classes/AmplitudeGraphView.swift; sourceTree = "<group>"; };
+		6A351A4122B6A34800034ACC /* ComKossoSwiftiViewProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ComKossoSwiftiViewProxy.swift; path = Classes/ComKossoSwiftiViewProxy.swift; sourceTree = "<group>"; };
 		6AB708B422B530290093E218 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		6AB708CA22B53A930093E218 /* SwiftSiriWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSiriWaveformView.swift; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* ComKossoSwiftiModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ComKossoSwiftiModuleAssets.m; path = Classes/ComKossoSwiftiModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* ComKossoSwiftiModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ComKossoSwiftiModuleAssets.h; path = Classes/ComKossoSwiftiModuleAssets.h; sourceTree = SOURCE_ROOT; };
 		DB34CDE5207B9EBD005F8E8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,12 +78,12 @@
 		DB258CA51F0964F6000D0D8D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				6AB708CA22B53A930093E218 /* SwiftSiriWaveformView.swift */,
-				6A816AB922AD503D0091C93C /* ComKossoSwiftiViewProxy.swift */,
-				6A816ABA22AD503E0091C93C /* ComKossoSwiftiView.swift */,
+				6A351A4022B6A34800034ACC /* AmplitudeGraphView.swift */,
+				6A351A3E22B6A34800034ACC /* ComKossoSwiftiView.swift */,
+				6A351A4122B6A34800034ACC /* ComKossoSwiftiViewProxy.swift */,
+				6A351A3F22B6A34800034ACC /* KossoDrawingTestView.swift */,
+				6A351A3D22B6A34800034ACC /* SwiftSiriWaveformView.swift */,
 				DB52E2421E9CD0F800AAAEE0 /* ComKossoSwiftiModule.swift */,
-				6A351A3922B5E3AE00034ACC /* KossoDrawingTestView.swift */,
-				6A351A3B22B67F4600034ACC /* AmplitudeGraphView.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -216,13 +216,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A351A4622B6A34800034ACC /* ComKossoSwiftiViewProxy.swift in Sources */,
 				DB34CDE0207B998A005F8E8C /* ComKossoSwiftiModuleAssets.m in Sources */,
-				6A816ABB22AD503E0091C93C /* ComKossoSwiftiViewProxy.swift in Sources */,
-				6AB708CB22B53A930093E218 /* SwiftSiriWaveformView.swift in Sources */,
-				6A816ABC22AD503E0091C93C /* ComKossoSwiftiView.swift in Sources */,
-				6A351A3C22B67F4600034ACC /* AmplitudeGraphView.swift in Sources */,
+				6A351A4422B6A34800034ACC /* KossoDrawingTestView.swift in Sources */,
 				DB52E2431E9CD0F800AAAEE0 /* ComKossoSwiftiModule.swift in Sources */,
-				6A351A3A22B5E3AE00034ACC /* KossoDrawingTestView.swift in Sources */,
+				6A351A4322B6A34800034ACC /* ComKossoSwiftiView.swift in Sources */,
+				6A351A4222B6A34800034ACC /* SwiftSiriWaveformView.swift in Sources */,
+				6A351A4522B6A34800034ACC /* AmplitudeGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
