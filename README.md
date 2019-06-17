@@ -29,9 +29,13 @@ And obviously, CODE STRONG!!
 
 
 
-Here's a screenshot of the example app: 
+Here's some screenshots of the (evolving) example app: 
 
 ![](screenshot.jpg)
+
+
+
+![](screenshot2.jpg)
 
 
 
