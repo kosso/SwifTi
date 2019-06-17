@@ -25,7 +25,6 @@ import Foundation
  
  */
 
-//@available(iOS 11.0, *)
 @objc(ComKossoSwiftiModule)
 class ComKossoSwiftiModule: TiModule {
     
@@ -34,7 +33,6 @@ class ComKossoSwiftiModule: TiModule {
     // read only 'let' constant
     public let anotherTestProperty: String = "this is another test property"
     
-    //public var myview: ComKossoSwiftiView
     public var myview : ComKossoSwiftiView = ComKossoSwiftiView()
     
     func moduleGUID() -> String {
@@ -47,64 +45,33 @@ class ComKossoSwiftiModule: TiModule {
     
     override func startup() {
         super.startup()
-        debugPrint("[DEBUG] \(self) was loaded")
-        
-        NSLog("[DEBUG] module was loaded.. nslog.. ")
-         NSLog("[INFO] HELLO ?? HELLO ?? .. ")
-        
+        NSLog("[INFO] module was loaded.. nslog.. ")
     }
-    
-    
-    
     
     @objc(example:)
     func example(arguments: Array<Any>?) -> String {
         // do something interesting here...
-        NSLog("[DEBUG] inside example func")
-        
+        NSLog("[INFO] inside example func")
         // for now, just return this..
         return anotherTestProperty
     }
     
-    
     @objc public var exampleProp: String {
-        
         get {
             // Example property getter
             return testProperty
         }
         set {
-
-            NSLog("[DEBUG] setting new exampleProp value.. ")
+            NSLog("[INFO] setting new exampleProp value.. ")
             // Example property setter
             testProperty = newValue
         }
     }
     
-    
-    // didn't seem to need this for the proxy functions to work? :/
-    /*
-    public func createView(args: Array<Any>?) -> ComKossoSwiftiViewProxy {
-        NSLog("[DEBUG] inside createView... ")
-        let proxy = ComKossoSwiftiViewProxy()
-        proxy._init(withPageContext: self.pageContext, args: args)
-        return proxy
-    }
-    */
-    
-    
-    
     @objc(hellothere:)
     public func hellothere(args: Array<Any>?) -> Void {
-        
         NSLog("[INFO] ComKossoSwiftiModule.swift hellothere ... ")
-        
         // Call the hello function in the view class?
         myview.hello(args:nil)
-
-        
     }
-    
-    
-    
 }

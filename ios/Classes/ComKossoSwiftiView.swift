@@ -16,8 +16,6 @@ import UIKit
 @objc(ComKossoSwiftiView)
 public class ComKossoSwiftiView : TiUIView {
     
-
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -26,41 +24,29 @@ public class ComKossoSwiftiView : TiUIView {
         super.init(coder: aDecoder)
     }
     
-    // hmmmm.....
     override public func frameSizeChanged(_ frame: CGRect, bounds: CGRect) {
-        // self.backgroundColor = .green
         super.frameSizeChanged(frame, bounds: bounds)
     }
     
-    
     private func setup() {
         // some defaults....?
+        // test
         // self.backgroundColor = .purple
     }
     
-    
     override public func initializeState(){
-
         NSLog("[INFO] in initializeState... ")
         super.initializeState()
         self.initializeComKossoSwiftiView();
-        
     }
     
     private func initializeComKossoSwiftiView() {
-        
         NSLog("[INFO] initializeComKossoSwiftiView.. ")
-       
-        
     }
     
     // Test
     @objc(hello:)
     public func hello(args: Array<Any>?) {
-        
         NSLog("[INFO] ComKossoSwiftiView.swift hello ... ")
-        
     }
-    
-
 }
